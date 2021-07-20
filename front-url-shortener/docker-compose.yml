@@ -1,0 +1,21 @@
+# Verison to be interpreted by the docker-compose CLI
+version: '3.5'
+# services called by docker-compose
+services:
+  # name of the service
+  front-url-shortener:
+    # stage to attain before launching the container
+    build:
+      # location of the files
+      context: .
+      # name of the dockerfile
+      dockerfile: Dockerfile
+    # host port and container port
+    ports:
+      - "3000:3000"
+      # name of the container
+    container_name: front-url-shortener
+    # volumes host folder to container folder
+    volumes:
+       - .:/app
+       - /app/node_modules
