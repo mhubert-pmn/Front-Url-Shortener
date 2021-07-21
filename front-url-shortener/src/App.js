@@ -1,9 +1,21 @@
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import SignUp from './components/SignUp/SignUp';
+import SignIn from './components/SignIn/SignIn';
+import MyUrls from './components/MyUrls/MyUrls';
+import ShortenUrl from './components/ShortenUrl/ShortenUrl';
+
 const App = () => {
   return (
-    <div>
-      <h1>Marre des URLs trop longues ?</h1>
-      <h2>Raccourcissez vos URLs en un clic !</h2>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={SignIn} />
+        <Route exact path="/inscription" component={SignUp} />
+        <Route exact path="/mes-urls" component={MyUrls} />
+        <Route exact path="/raccourcir-une-url" component={ShortenUrl} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
