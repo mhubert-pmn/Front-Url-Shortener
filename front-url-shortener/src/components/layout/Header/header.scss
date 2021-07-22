@@ -6,9 +6,17 @@
     justify-content: space-between;
     padding: 1rem 1.5rem;
 
+    @media screen and (max-width: 900px) {
+      padding: 0.5rem 1.5rem;
+    }
+
     &__logo {
       font-size: 2rem;
       font-weight: bold;
+
+      @media screen and (max-width: 900px) {
+        font-size: 1.5rem;
+      }
 
       &:hover {
         color: #000;
@@ -16,6 +24,14 @@
     }
 
     .menu {
+      @media screen and (max-width: 899px) {
+        display: none;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: right;
+
       &__links {
         li {
           list-style-type: none;
@@ -34,6 +50,53 @@
     }
   }
 
+  .mobile-menu {
+    @media screen and (min-width: 900px) {
+      display: none;
+    }
+
+    text-align: right;
+    position: relative;
+    flex-basis: 50%;
+
+    img {
+      width: 28px;
+      background-color: #000;
+      border-radius: 10px;
+      padding: 8px;
+    }
+
+    &__sub-menu {
+      background-color: #000;
+      position: absolute;
+      z-index: 100;
+      right: 0;
+      top: 80%;
+      width: 90%;
+
+      @media screen and (min-width: 640px) {
+        width: 60%;
+      }
+
+      &__links {
+        li {
+          text-align: center;
+          border-top: 1px solid #505050;
+
+          &:first-child {
+            border-top: none;
+          }
+
+          a {
+            color: #FFF;
+            display: block;
+            padding: 8px 1rem;
+          }
+        }
+      }
+    }
+  }
+
   &__sub-header {
     position: relative;
     width: 95%;
@@ -48,7 +111,7 @@
       border-right: 15px solid transparent;
       border-top: 15px solid #000;
       position: absolute;
-      bottom: -15px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
     }
