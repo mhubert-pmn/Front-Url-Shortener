@@ -35,16 +35,24 @@ export const Menu = () => {
   return(
     <div className="menu">
       <ul className="menu__links">
-        {headerLinks.map(link => (
+        {token !== null && headerLinks.map(link => (
           <li key={link.text}>
             <Link to={link.link}>{link.text}</Link>
           </li>
         ))}
-
+        
         {headerButtons.map(button => (
-          <button type="button" key={button.text}>
-            <Link to={button.link}>{button.text}</Link>
-          </button>
+          token !== null ? (
+            (button.text !== "Inscription" && button.text !== "Connexion") &&
+            <button type="button">
+              <Link to={button.link}>{button.text}</Link>
+            </button>
+          ) : (
+            button.text !== "Déconnexion" &&
+            <button type="button">
+              <Link to={button.link}>{button.text}</Link>
+            </button>
+          )
         ))}
       </ul>
     </div>
@@ -63,7 +71,7 @@ export const Header = ({ ...props }) => {
   return(
     <div className="header" {...props}>
       <div className="header__content">
-        <Link to="/" className="header__content__logo">URL Shortener</Link>
+        <p className="header__content__logo">URL Shortener</p>
         <Menu />
       </div>
 
