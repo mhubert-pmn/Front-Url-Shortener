@@ -111,7 +111,7 @@ export const Header = ({ ...props }) => {
   return(
     <div className="header" {...props}>
       <div className="header__content">
-        <p className="header__content__logo">URL Shortener</p>
+        <Link to="/" className="header__content__logo">URL Shortener</Link>
         <Menu />
         <MobileMenu />
       </div>
