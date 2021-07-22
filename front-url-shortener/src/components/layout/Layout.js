@@ -4,10 +4,10 @@ import "./Layout.scss";
 
 export default function Layout(props) {
   return (
-    <div class="background">
+    <div className="background">
       <Header />
-      <div class="propsLayout">{props.children}</div>
-      <div class="opacity"></div>
+      <div className="propsLayout">{props.children}</div>
+      <div className="opacity"></div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 .background {
+  position: relative;
   background-image: url("../../medias/background.jpg");
   height: 100vh;
   background-position: center;
@@ -8,6 +9,7 @@
   .propsLayout {
     z-index: 2;
     position: relative;
+    padding: 1.2rem 2rem;
   }
 
   .opacity {
