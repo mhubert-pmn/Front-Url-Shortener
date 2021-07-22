@@ -36,7 +36,7 @@ export const Menu = () => {
   return(
     <div className="menu">
       <ul className="menu__links">
-        {token === null && headerLinks.map(link => (
+        {token !== null && headerLinks.map(link => (
           <li key={link.text}>
             <Link to={link.link}>{link.text}</Link>
           </li>
