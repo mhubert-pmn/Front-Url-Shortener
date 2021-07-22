@@ -5,7 +5,7 @@ const SignUp = () => {
   return(
     <div>
       <h1>S'inscrire</h1>
-      <button type="rounded"> Click here </button>
+      <Button type="rounded"> Click here </Button>
     </div>
   )
 }
