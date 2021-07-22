@@ -2,6 +2,7 @@ import React from 'react';
 import Form from '../layout/form/Form';
 import FormHeader from '../layout/formHeader/FormHeader';
 import FormLayout from '../layout/formLayout/FormLayout';
+import Button from '../layout/Button/Button';
 
 const SignUp = () => {
   return(
@@ -13,6 +14,8 @@ const SignUp = () => {
           {/*button*/}
         </Form>        
       </FormLayout>
+      
+      <Button type="rounded"> Click here </Button>
     </div>
   )
 }
