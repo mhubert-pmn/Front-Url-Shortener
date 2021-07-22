@@ -11,6 +11,16 @@ body {
     font-family: 'Lilita One', 'Times New Roman', Times, serif;
     font-weight: 400;
   }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      color: #FFF;
+      transition: color 0.2s ease-in;
+    }
+  }
 }
 
 code {
