@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from '../layout/Form/Form';
+import Button from '../layout/Button/Button';
 
 const SignUp = () => {
   return(
@@ -11,7 +12,9 @@ const SignUp = () => {
         text="Déjà inscrit ?"
         link="/"
         link_text="Connecte-toi !"
-      />
+      >
+        <Button type="common">Envoyer</Button>
+      </Form>
     </div>
   )
 }

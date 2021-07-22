@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FormHeader from "../FormHeader/FormHeader";
 import FormLayout from "../FormLayout/FormLayout";
 import './form.scss';
-import { Link } from "react-router-dom";
 
 const Form = ({ children, title, subtitle, text, link, link_text, ...props }) => {
   return(
