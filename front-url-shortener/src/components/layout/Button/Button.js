@@ -10,7 +10,7 @@ const Button = ({ children, disabled, type, ...props }) => {
 
 	// Button styles
 	const commonStyles = {
-		border          : 'none',
+		border          : '2px solid #FFC900',
 		backgroundColor : '#FFC900',
 		color           : '#000'
 	};
