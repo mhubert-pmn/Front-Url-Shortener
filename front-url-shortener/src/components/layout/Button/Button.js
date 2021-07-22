@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './button.scss';
 
-const Button = ({ children, color = 'none', bgColor, disabled, border, ...props }) => {
+const Button = ({ children, color = 'transparent', disabled, type, border, ...props }) => {
 	const [
 		hover,
 		setHover
@@ -17,10 +17,10 @@ const Button = ({ children, color = 'none', bgColor, disabled, border, ...props 
 	const outlineStyles = {
 		border          : `1px solid ${color}`,
 		color           : color,
-		backgroundColor : 'black'
+		backgroundColor : 'white'
 	};
 	const outlineHoverStyle = {
-		color           : 'black',
+		color           : 'white',
 		backgroundColor : color
 	};
 
@@ -46,7 +46,7 @@ const Button = ({ children, color = 'none', bgColor, disabled, border, ...props 
 		default:
 			btnStyle = {
 				border          : `1px solid ${color}`,
-				backgroundColor : btnColor,
+				backgroundColor : color,
 				color           : 'black'
 			};
 			break;
@@ -55,15 +55,15 @@ const Button = ({ children, color = 'none', bgColor, disabled, border, ...props 
 		<button
 			style={
 
-					disabled ? { ...commonStyles, ...btnStyle, ...style } :
-					{ ...commonStyles, ...btnStyle, ...style }
+					disabled ? { ...commonStyles, ...btnStyle} :
+					{ ...commonStyles, ...btnStyle,}
 			}
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}
 			{...props}
 			type="button"
 	
-			className={styles.btn}
+			className="btn"
 		>
 			{children || 'button'}
 		</button>
