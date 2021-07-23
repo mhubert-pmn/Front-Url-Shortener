@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import "./input.scss";
 
-const InputField = ({ value, id, label, placeholder, validators, type, onChange }) => {
+const InputField = ({ value, id, label, placeholder, validators, type, required, onChange }) => {
 
     return (
         <div className="form-group">
-            {label && <label htmlFor={id}>{label}</label>}
+            {label && <label htmlFor={id}>{label}{required && "*"}</label>}
 
             {type === 'textarea' ? (
                 <textarea
@@ -15,6 +15,7 @@ const InputField = ({ value, id, label, placeholder, validators, type, onChange 
                     placeholder={placeholder}
                     id={id}
                     defaultValue={value}
+                    required={required}
                     onChange={onChange}
                 />
             ) : (
@@ -23,6 +24,7 @@ const InputField = ({ value, id, label, placeholder, validators, type, onChange 
                     id={id}
                     className='form-control'
                     placeholder={placeholder}
+                    required={required}
                     onChange={onChange}
                 />
             )}
