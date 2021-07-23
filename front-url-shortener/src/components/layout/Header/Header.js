@@ -48,7 +48,7 @@ export const Menu = () => {
           token !== null ? (
             (button.text !== "Inscription" && button.text !== "Connexion") &&
             <Button key={button.text}>
-              <Link to={button.link}>{button.text}</Link>
+              <Link to={button.link} style={{color: "#FFF"}}>{button.text}</Link>
             </Button>
           ) : (
             button.text !== "Déconnexion" &&
