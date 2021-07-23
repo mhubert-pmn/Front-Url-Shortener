@@ -1,4 +1,7 @@
 .header {
+  position: relative;
+  z-index: 10;
+
   &__content {
     background-color: #FFC900;
     display: flex;

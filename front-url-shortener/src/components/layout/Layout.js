@@ -1,11 +1,15 @@
-import React from 'react';
-import "./Layout.scss"
+import React from "react";
+import { Header } from "./Header/Header";
+import "./Layout.scss";
 
-export default function Layout(props) {
-    return(
-        <div class="background">
-            <div class="propsLayout">{props.children}</div>
-            <div class="opacity"></div>
-        </div>
-    )
+const Layout = (props) => {
+  return (
+    <div className="background">
+      <Header />
+      <div className="propsLayout">{props.children}</div>
+      <div className="opacity"></div>
+    </div>
+  );
 }
+
+export default Layout;

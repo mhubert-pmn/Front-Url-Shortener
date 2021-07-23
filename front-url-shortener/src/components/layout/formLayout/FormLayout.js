@@ -4,7 +4,7 @@ import './formLayout.scss';
 const FormLayout = (props) => {
   return(
     <div className="formLayout">
-      <div className="formLayout_content">{props.children}</div>
+      {props.children}
     </div>    
   )
 }

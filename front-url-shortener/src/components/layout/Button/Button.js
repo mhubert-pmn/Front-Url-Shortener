@@ -1,39 +1,61 @@
 import React, { useState } from 'react';
-import styles from './button.scss';
+import './button.scss';
 
-const Button = ({ children, color = 'transparent', disabled, type, border, ...props }) => {
-	const [
-		hover,
-		setHover
-	] = useState(false);
+const Button = ({ children, disabled, type, ...props }) => {
+	const [hover, setHover] = useState(false);
+
 	const toggleHover = () => {
 		setHover(!hover);
 	};
+
+	// Button styles
 	const commonStyles = {
-		border          : `1px solid ${color}`,
-		backgroundColor : color,
-		color           : 'black'
-	};
-	const outlineStyles = {
-		border          : `1px solid ${color}`,
-		color           : color,
-		backgroundColor : 'white'
-	};
-	const outlineHoverStyle = {
-		color           : 'white',
-		backgroundColor : color
+		border          : '2px solid #FFC900',
+		backgroundColor : '#FFC900',
+		color           : '#000'
 	};
 
-	const roundedStyle = {
-		backgroundColor : color,
-		color           : 'black',
-		borderRadius    : '25px'
+	const commonHoverStyles = {
+		border          : '2px solid #FFC900',
+		backgroundColor : 'transparent',
+		color           : '#000'
+	};
+
+	const outlineStyles = {
+		border          : '2px solid #000',
+		backgroundColor : 'transparent',
+		color 					: '#000'
+	};
+
+	const outlineHoverStyle = {
+		border					: '2px solid #000',
+		backgroundColor : '#000',
+		color           : '#FFF'
+	};
+
+	const blackStyle = {
+		border					: '2px solid #000',
+		backgroundColor : '#000',
+		color           : '#FFF',
+	};
+
+	const blackHoverStyle = {
+		border					: '2px solid #000',
+		backgroundColor : 'transparent',
+		color           : '#000',
 	};
 
 	let btnStyle;
+
+	// Applying style depending on the prop type
 	switch (type) {
-		case 'rounded':
-			btnStyle = roundedStyle;
+		case 'common':
+			if (hover) {
+				btnStyle = commonHoverStyles;
+			}
+			else {
+				btnStyle = commonStyles;
+			}
 			break;
 		case 'outline':
 			if (hover) {
@@ -44,19 +66,23 @@ const Button = ({ children, color = 'transparent', disabled, type, border, ...pr
 			}
 			break;
 		default:
-			btnStyle = {
-				border          : `1px solid ${color}`,
-				backgroundColor : color,
-				color           : 'black'
-			};
+			if (hover) {
+				btnStyle = blackHoverStyle;
+			}
+			else {
+				btnStyle = blackStyle;
+			}
 			break;
 	}
+
 	return (
 		<button
 			style={
-
-					disabled ? { ...commonStyles, ...btnStyle} :
-					{ ...commonStyles, ...btnStyle,}
+				disabled ? {
+					...commonStyles, ...btnStyle
+				} : {
+					...commonStyles, ...btnStyle
+				}
 			}
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}

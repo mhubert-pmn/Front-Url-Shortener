@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Button from "../Button/Button";
 
 import './header.scss';
 import MenuIcon from '../../../medias/menu.png';
@@ -36,7 +37,7 @@ export const Menu = () => {
   return(
     <div className="menu">
       <ul className="menu__links">
-        {token === null && headerLinks.map(link => (
+        {token !== null && headerLinks.map(link => (
           <li key={link.text}>
             <Link to={link.link}>{link.text}</Link>
           </li>
@@ -46,14 +47,19 @@ export const Menu = () => {
         {headerButtons.map(button => (
           token !== null ? (
             (button.text !== "Inscription" && button.text !== "Connexion") &&
-            <button type="button" key={button.text}>
+            <Button key={button.text}>
               <Link to={button.link}>{button.text}</Link>
-            </button>
+            </Button>
           ) : (
             button.text !== "Déconnexion" &&
-            <button type="button" key={button.text}>
-              <Link to={button.link}>{button.text}</Link>
-            </button>
+            <Button key={button.text} type={button.text === "Inscription" ? "outline" : ""}>
+              <Link
+                to={button.link}
+                style={button.text === "Inscription" ? { color: "#000"} : { color: "#FFF" }}
+              >
+                {button.text}
+              </Link>
+            </Button>
           )
         ))}
     </div>
