@@ -6,9 +6,13 @@ const MyUrls = (props) => {
   const [links, setLinks] = useState(["0"]);
   
   useEffect(async()=>{
-    const idUser = localStorage.getItem("user_idUser")
+    // Decode token to retrieve the id of the current user
+    const token = localStorage.getItem("token");
+    let token_payload = token !== null ? JSON.parse(atob(token.split(".")[1])) : null;
+    let user_idUser = token_payload !== null ? token_payload.id : null;
+
     await axios.get("http://localhost:8201/links", { params: {
-    user_idUser: idUser}}).then((response)=>{
+    user_idUser: user_idUser}}).then((response)=>{
     let state = response.data
     setLinks(state);
     }).catch(
