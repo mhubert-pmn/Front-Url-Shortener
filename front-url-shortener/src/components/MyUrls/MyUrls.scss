@@ -1,8 +1,62 @@
 .MyUrls {
     text-align: center;
 
+    h1 {
+        margin-top: 10vh;
+    }
+
+    h2 {
+        margin-top: 5vh;
+    }
+
+    p {
+        margin-top: 10vh;
+    }
+
     .redirectUrl {
     font-weight: bold;
+    }
+
+    .tableLinks {
+        border-collapse: collapse;
+        width: 50%;
+        margin-top: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+        border: 0px;
+        box-shadow: 0px 2px 3px rgba($color: #000000, $alpha: 0.2);
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+
+        th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            padding-left: 20px;
+            background-color: #FFC900;
+            color: black;
+          }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            background-color: #fff;
+            text-align: left;
+            padding-left: 20px;
+            border-right: 0px;
+            border-left: 0px;
+        }
+
+        tr {
+            border-left: 0px solid;
+            border-right: 0px solid;
+        }
+
+        td:last-child {
+            border-bottom: 0px;
+        }
     }
 }
 
