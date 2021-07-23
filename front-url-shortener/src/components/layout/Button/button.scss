@@ -5,5 +5,9 @@
 
 	&:hover{
 		cursor: pointer;
+
+		a {
+			color: inherit!important;
+		}
 	}
 }

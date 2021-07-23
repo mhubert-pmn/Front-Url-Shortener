@@ -30,7 +30,7 @@ const Button = ({ children, disabled, type, ...props }) => {
 	const outlineHoverStyle = {
 		border					: '2px solid #000',
 		backgroundColor : '#000',
-		color           : '#FFF!important'
+		color           : '#FFF'
 	};
 
 	const blackStyle = {
