@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from '../layout/Form/Form';
 import Button from '../layout/Button/Button';
+import InputField from '../layout/Input/Input';
 
 const SignUp = () => {
   return(
@@ -13,6 +14,8 @@ const SignUp = () => {
         link="/"
         link_text="Connecte-toi !"
       >
+        <InputField label="Pseudo" id="label" type="text" placeholder="Votre pseudo" />
+
         <Button type="common">Envoyer</Button>
       </Form>
     </div>

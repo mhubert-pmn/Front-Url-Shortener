@@ -1,0 +1,22 @@
+.form-group {
+  margin: 0 auto 2rem auto;
+  text-align: left;
+  width: 65%;
+
+  @media screen and (min-width: 641px) and (max-width: 900px) {
+    width: 80%;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 90%;
+  }
+
+  label, input {
+    display: block;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid #FFC900;
+    width: 100%;
+  }
+}
