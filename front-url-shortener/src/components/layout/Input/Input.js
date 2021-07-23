@@ -1,21 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import {validateInput} from "../utilities/Validator";
 import "./input.scss";
 
-const InputField = ({ value, id, label, placeholder, validators, type }) => {
-    const [error, setError] = useState(false);
-    const [inputValue, setInputValue] = useState(null);
-
-    const handleChange = (event) => {
-        setInputValue(event);
-        setError(validateInput(validators, event));
-    };
+const InputField = ({ value, id, label, placeholder, validators, type, required, onChange }) => {
 
     return (
         <div className="form-group">
-            {label && <label htmlFor={id}>{label}</label>}
+            {label && <label htmlFor={id}>{label}{required && "*"}</label>}
 
             {type === 'textarea' ? (
                 <textarea
@@ -23,7 +15,8 @@ const InputField = ({ value, id, label, placeholder, validators, type }) => {
                     placeholder={placeholder}
                     id={id}
                     defaultValue={value}
-                    onChange={e => handleChange(e.target.value)}
+                    required={required}
+                    onChange={onChange}
                 />
             ) : (
                 <input
@@ -31,10 +24,10 @@ const InputField = ({ value, id, label, placeholder, validators, type }) => {
                     id={id}
                     className='form-control'
                     placeholder={placeholder}
-                    onChange={e => handleChange(e.target.value)}
+                    required={required}
+                    onChange={onChange}
                 />
             )}
-            {error && <span className='text-danger'>{error.message}</span>}
         </div>
     )
 };
