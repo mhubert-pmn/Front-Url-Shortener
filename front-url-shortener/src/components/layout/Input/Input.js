@@ -42,7 +42,7 @@ const InputField = ({value, id, label, placeholder, validators, type, onChange})
 
 InputField.propTypes = {
     value: PropTypes.string,
-    id: propTypes.number,
+    id: PropTypes.number,
     label: PropTypes.string,
     placeholder: PropTypes.string,
     validators: PropTypes.array,
