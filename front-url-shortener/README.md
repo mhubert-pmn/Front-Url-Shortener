@@ -19,7 +19,7 @@
 
 ## Without Docker
 
-- Run `npm start` to run the app in the development mode. 
+- Run `yarn start` to run the app in the development mode. 
 - Go to the url: `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
 ## Views

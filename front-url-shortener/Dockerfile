@@ -11,7 +11,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN yarn
 
 # Add app
 COPY . ./
@@ -20,4 +20,4 @@ COPY . ./
 EXPOSE 3000
 
 # Start app
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

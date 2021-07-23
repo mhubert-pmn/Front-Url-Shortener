@@ -86,16 +86,25 @@
     }
 
     p {
-      &:last-child {
-        margin-top: 2rem;
-      }
+      margin-top: 2rem;
       
       span {
         font-weight: bold;
       }
 
-      a:hover {
-        color: #FFC900;
+      a {
+        word-break: break-word;
+        &:hover {
+          color: #FFC900;
+        }
+      }
+    }
+
+    &__qrcode {
+      text-align: center;
+
+      p {
+        margin-bottom: 1rem;
       }
     }
   }
