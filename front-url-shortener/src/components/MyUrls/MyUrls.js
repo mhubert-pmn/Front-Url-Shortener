@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from 'react';
+import { Link } from "react-router-dom";
 import axios from "axios";
 import './MyUrls.scss';
 
@@ -40,13 +41,13 @@ const MyUrls = (props) => {
             {links.map(link => (
               <tbody>
                 <tr>
-                  <td>{link.originLink}</td>
-                  <td>{link.customLink}</td>
+                  <td><a href={link.originLink} target="_blank">{link.originLink}</a></td>
+                  <td><a href={link.customLink} target="_blank">{link.customLink}</a></td>
                 </tr>
               </tbody>
             
           ))}</table>
-        <p>D'autres URLs à raccourcir ? <span className="redirectUrl"> <a href="/ShortenUrl">C'est par ici !</a></span></p>
+        <p>D'autres URLs à raccourcir ? <span className="redirectUrl"><Link to="/raccourcir-une-url">C'est par ici !</Link></span></p>
     </div>
   )
 }
