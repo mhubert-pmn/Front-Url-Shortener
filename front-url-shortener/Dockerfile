@@ -2,7 +2,7 @@
 FROM node:latest
 
 # Set working directory
-WORKDIR /app
+WORKDIR mkdir /app
 
 # Add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
