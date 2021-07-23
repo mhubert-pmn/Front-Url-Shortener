@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import "./input.scss";
 
 const InputField = ({ value, id, label, placeholder, validators, type, required, onChange }) => {
-
     return (
         <div className="form-group">
             {label && <label htmlFor={id}>{label}{required && "*"}</label>}
