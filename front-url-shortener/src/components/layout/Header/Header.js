@@ -29,9 +29,13 @@ const headerButtons = [
   },
   {
     text: "Déconnexion",
-    link: "/deconnexion"
+    link: "/"
   }
 ]
+
+const signOut = () => {
+  localStorage.removeItem("token");
+}
 
 export const Menu = () => {
   return(
@@ -47,8 +51,8 @@ export const Menu = () => {
         {headerButtons.map(button => (
           token !== null ? (
             (button.text !== "Inscription" && button.text !== "Connexion") &&
-            <Button key={button.text}>
-              <Link to={button.link}>{button.text}</Link>
+            <Button key={button.text} onClick={signOut}>
+              <Link to={button.link} style={{color: "#FFF"}}>{button.text}</Link>
             </Button>
           ) : (
             button.text !== "Déconnexion" &&
